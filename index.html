@@ -1,0 +1,801 @@
+<!DOCTYPE html><html dir="rtl" lang="ar"><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الشيخة الروحانية أم جابر | الموقع الرسمي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&amp;family=Tajawal:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold-primary: #ffd700;
+            --gold-secondary: #ffb347;
+            --gold-dark: #b8860b;
+            --black: #1a1a1a;
+            --white: #ffffff;
+            --cream: #fff8dc;
+            --gold-light: #fffacd;
+            --shadow-gold: 0 4px 20px rgba(255, 215, 0, 0.3);
+            --shadow-dark: 0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: 
+                linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(45, 45, 45, 0.95) 100%),
+                linear-gradient(45deg, #1a1a1a 25%, transparent 25%),
+                linear-gradient(-45deg, #1a1a1a 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #2d2d2d 75%),
+                linear-gradient(-45deg, transparent 75%, #2d2d2d 75%);
+            background-size: 60px 60px, 60px 60px, 60px 60px, 60px 60px, 60px 60px;
+            background-position: 0 0, 0 0, 30px 30px, 30px 30px, 0 0;
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* خلفية جديدة أنيقة */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.08;
+            background: 
+                radial-gradient(circle at 20% 80%, var(--gold-primary) 2px, transparent 2px),
+                radial-gradient(circle at 80% 20%, var(--gold-secondary) 1px, transparent 1px),
+                radial-gradient(circle at 40% 40%, var(--gold-dark) 1px, transparent 1px);
+            background-size: 120px 120px, 80px 80px, 200px 200px;
+            z-index: -1;
+        }
+
+        /* هيدر جديد */
+        .header {
+            text-align: center;
+            padding: 4rem 2rem 3rem;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, transparent 100%);
+            border-bottom: 2px solid var(--gold-primary);
+        }
+
+        .main-title {
+            font-family: 'Amiri', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            color: var(--gold-primary);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: clamp(1.1rem, 3vw, 1.6rem);
+            color: var(--gold-light);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        /* إحصائيات */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid var(--gold-primary);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            background: rgba(255, 215, 0, 0.2);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--gold-primary);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--cream);
+            margin-top: 0.5rem;
+        }
+
+        /* قسم المنتجات */
+        .products-section {
+            padding: 4rem 2rem;
+            background: rgba(255, 215, 0, 0.03);
+        }
+
+        .section-title {
+            font-family: 'Amiri', serif;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            text-align: center;
+            color: var(--gold-primary);
+            margin-bottom: 3rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: rgba(26, 26, 26, 0.9);
+            border: 2px solid var(--gold-primary);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-gold), var(--shadow-dark);
+            border-color: var(--gold-secondary);
+        }
+
+        .product-image {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 2rem;
+        }
+
+        .product-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--gold-primary);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .product-description {
+            color: var(--cream);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-btn {
+            background: linear-gradient(45deg, var(--gold-primary), var(--gold-secondary));
+            color: var(--black);
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .product-btn:hover {
+            background: linear-gradient(45deg, var(--gold-secondary), var(--gold-primary));
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        /* قسم الخدمات */
+        .services-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, transparent 100%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: rgba(26, 26, 26, 0.8);
+            border: 1px solid var(--gold-primary);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            background: rgba(255, 215, 0, 0.1);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .service-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--gold-primary);
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            color: var(--cream);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .service-btn {
+            background: linear-gradient(45deg, var(--gold-dark), var(--gold-primary));
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .service-btn:hover {
+            background: linear-gradient(45deg, var(--gold-primary), var(--gold-secondary));
+            transform: scale(1.05);
+        }
+
+        /* أزرار التواصل في الصفحة */
+        .contact-section {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .main-contact-btn {
+            background: linear-gradient(45deg, var(--gold-primary), var(--gold-secondary));
+            color: var(--black);
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: all 0.4s ease;
+            border: 3px solid transparent;
+            box-shadow: var(--shadow-gold);
+            min-width: 250px;
+            justify-content: center;
+        }
+
+        .main-contact-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 
+                0 15px 35px rgba(255, 215, 0, 0.4),
+                0 5px 15px rgba(0, 0, 0, 0.3);
+            border-color: var(--white);
+        }
+
+        .whatsapp-main {
+            background: linear-gradient(45deg, #25D366, #20b954);
+            color: var(--white);
+        }
+
+        .whatsapp-main:hover {
+            background: linear-gradient(45deg, #20b954, #1da851);
+            box-shadow: 
+                0 15px 35px rgba(37, 211, 102, 0.4),
+                0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .phone-main {
+            background: linear-gradient(45deg, var(--gold-primary), var(--gold-secondary));
+            color: var(--black);
+        }
+
+        .phone-main:hover {
+            background: linear-gradient(45deg, var(--gold-secondary), var(--gold-primary));
+        }
+
+        /* أزرار التواصل المحسنة (مخفية) */
+        .contact-buttons {
+            display: none;
+        }
+
+        .contact-btn {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: bold;
+            transition: all 0.4s ease;
+            position: relative;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-btn::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--gold-primary), var(--gold-secondary), var(--gold-primary));
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-btn:hover::before {
+            opacity: 1;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px) scale(1.1);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 
+                0 12px 40px rgba(0, 0, 0, 0.4),
+                0 0 20px rgba(255, 215, 0, 0.6);
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25D366, #20b954);
+            color: white;
+        }
+
+        .whatsapp-btn:hover {
+            background: linear-gradient(135deg, #20b954, #1da851);
+        }
+
+        .phone-btn {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
+            color: var(--black);
+        }
+
+        .phone-btn:hover {
+            background: linear-gradient(135deg, var(--gold-secondary), var(--gold-primary));
+        }
+
+        /* تأثير النبضة */
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(255, 215, 0, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+            }
+        }
+
+        /* فووتر */
+        .footer {
+            background: var(--black);
+            padding: 2rem;
+            text-align: center;
+            border-top: 2px solid var(--gold-primary);
+            margin-top: 4rem;
+        }
+
+        .footer-text {
+            color: var(--gold-light);
+            font-size: 1rem;
+        }
+
+        /* تصميم متجاوب */
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .contact-buttons {
+                bottom: 20px;
+                right: 20px;
+                gap: 12px;
+            }
+            
+            .contact-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 1.6rem;
+            }
+            
+
+        }
+
+        @media (max-width: 480px) {
+            .contact-section {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .main-contact-btn {
+                min-width: 220px;
+                font-size: 1rem;
+                padding: 1rem 2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header {
+                padding: 3rem 1rem 2rem;
+            }
+            
+            .products-section,
+            .services-section {
+                padding: 3rem 1rem;
+            }
+        }
+
+        /* تأثيرات بسيطة */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* شريط التقدم الذهبي */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold-primary), var(--gold-secondary));
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+    </style>
+<script src="https://puc.poecdn.net/authenticated_preview_page/syncedState.bd4eeeb8e8e02052ee92.js"></script></head>
+<body>
+    <!-- شريط التقدم -->
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <!-- خلفية -->
+    <div class="bg-pattern"></div>
+
+    <!-- الهيدر -->
+    <header class="header">
+        <h1 class="main-title fade-in">🌟 الشيخة الروحانية أم جابر 🌟</h1>
+        <p class="subtitle fade-in">أقوى الأعمال الروحانية الشرعية المجربة والمضمونة</p>
+        
+        <!-- أزرار التواصل في الصفحة -->
+        <div class="contact-section fade-in">
+            <a href="https://wa.me/966545916508" class="main-contact-btn whatsapp-main">
+                💬 تواصل عبر الواتساب الآن
+            </a>
+            <a href="tel:+966545916508" class="main-contact-btn phone-main">
+                📞 اتصل الآن مباشرة
+            </a>
+        </div>
+    </header>
+
+    <!-- قسم المنتجات -->
+    <section class="products-section">
+        <h2 class="section-title fade-in">🔮 منتجاتنا الروحانية المميزة 🔮</h2>
+        
+        <div class="products-grid">
+            <!-- المنتج 1 -->
+            <div class="product-card fade-in">
+                <img src="https://pfst.cf2.poecdn.net/base/image/25b298ade8209dab70d01e49698f2444be02695845b7d156384c96bf377bdbfa?w=869&amp;h=911" alt="جلب الحبيب واستهوايل جلب الحبيب" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">جلب الحبيب واستهوايل جلب الحبيب</h3>
+                    <p class="product-description">علاج المس بكافة أنواعه تسهيل الأمور المستعصية أعمال الطاعة والمحبة والتفرقة والربط والكره</p>
+                    <a href="https://wa.me/966545916508" class="product-btn">💬 اطلب الآن</a>
+                </div>
+            </div>
+            
+            <!-- المنتج 2 -->
+            <div class="product-card fade-in">
+                <img src="https://pfst.cf2.poecdn.net/base/image/a1207dca03e068e907b6baf46cdd26f3881c7ad7d7ecaed371214d1bb2d254f5?w=869&amp;h=911" alt="جلب الحبيب بسرعة البرق" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">جلب الحبيب بسرعة البرق</h3>
+                    <p class="product-description">خبرة 25 سنة في العلوم الروحانية أضمن وأقوى الأعمال المجربة</p>
+                    <a href="https://wa.me/966545916508" class="product-btn">💕 اطلب الآن</a>
+                </div>
+            </div>
+            
+            <!-- المنتج 3 -->
+            <div class="product-card fade-in">
+                <img src="https://pfst.cf2.poecdn.net/base/image/a1fd1f94449825f61a64ac68323d3d43e93803003a338d1fa314e2f4720cd3e4?w=869&amp;h=911" alt="جلب الحبيب واستهوايل جلب الحبيب" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">جلب الحبيب واستهوايل جلب الحبيب</h3>
+                    <p class="product-description">تريده يوجد خاتم مروحن ب7 خدام من أقوى المرة للحاجة الشخصية</p>
+                    <a href="https://wa.me/966545916508" class="product-btn">🔮 اطلب الآن</a>
+                </div>
+            </div>
+            
+            <!-- المنتج 4 -->
+            <div class="product-card fade-in">
+                <img src="https://pfst.cf2.poecdn.net/base/image/0a256ec830c40a93d64cc008f309b020da01542cdf86dbd86406a1aa47e476fd?w=869&amp;h=911" alt="نسخة شيخة بالشرق الأوسط" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">نسخة شيخة بالشرق الأوسط</h3>
+                    <p class="product-description">لفك السحر المتجدد أضمن نسخة بالشرق الأوسط لفك السحر المتجدد وهو من الأسحار المدفونة</p>
+                    <a href="https://wa.me/966545916508" class="product-btn">🛡️ اطلب الآن</a>
+                </div>
+            </div>
+            
+            <!-- المنتج 5 -->
+            <div class="product-card fade-in">
+                <img src="https://pfst.cf2.poecdn.net/base/image/7254356a4aa50592b951ccfcb4f43eda4bad203bbbbcf066e6f82c0506c7d35f?w=869&amp;h=911" alt="عمل محبة بين الزوجين" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">عمل محبة بين الزوجين</h3>
+                    <p class="product-description">خبرة 25 سنة في العلوم الروحانية أضمن وأقوى الأعمال المجربة</p>
+                    <a href="https://wa.me/966545916508" class="product-btn">💖 اطلب الآن</a>
+                </div>
+            </div>
+            
+            <!-- المنتج 6 -->
+            <div class="product-card fade-in">
+                <img src="https://pfst.cf2.poecdn.net/base/image/2fdaafeb5b8e7d3f0bd2606d0275f6ca75b24f3aa95a7ff1223502917c1cd7e1?w=869&amp;h=911" alt="أعمال جلب الحبيب" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">أعمال جلب الحبيب</h3>
+                    <p class="product-description">خبرة 25 سنة في العلوم الروحانية أضمن وأقوى الأعمال المجربة</p>
+                    <a href="https://wa.me/966545916508" class="product-btn">💞 اطلب الآن</a>
+                </div>
+            </div>
+            
+            <!-- المنتج 7 -->
+            <div class="product-card fade-in">
+                <img src="https://pfst.cf2.poecdn.net/base/image/4f5f5ea4dde1878e68e2fdf7ff0932c6dda0f3140c0e32f74224653110c7c42d?w=869&amp;h=911" alt="عمل محبة وطاعة بين الأهل" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">عمل محبة وطاعة بين الأهل</h3>
+                    <p class="product-description">والاقارب وارباب الاعمال والعاشقين للسيطرة التامه عليه ويوجد ايضا طاعة للحبيب الزعلان</p>
+                    <a href="https://wa.me/966545916508" class="product-btn">👨‍👩‍👧‍👦 اطلب الآن</a>
+                </div>
+            </div>
+            
+            <!-- المنتج 8 -->
+            <div class="product-card fade-in">
+                <img src="https://pfst.cf2.poecdn.net/base/image/253a44e74f16a1122f72f713c79132c660c32b4700c611b1d833ca472e2f2219?w=869&amp;h=911" alt="رد المطلقات لبيتهم" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">رد المطلقات لبيتهم</h3>
+                    <p class="product-description">تقوم الشيخة بأقوى أعمال الروحانية لرد المطلقات لبيتهم وخلال ثلاث أيام رد المطلقة هو من أقوى ما تتميز به</p>
+                    <a href="https://wa.me/966545916508" class="product-btn">💍 اطلب الآن</a>
+                </div>
+            </div>
+            
+            <!-- المنتج 9 -->
+            <div class="product-card fade-in">
+                <img src="https://pfst.cf2.poecdn.net/base/image/5e07002e04b331a80627f9d7662866b7dcd67b505f304bd22d6ee872fd716e6e?w=869&amp;h=911" alt="جلب الحبيب للزواج" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">جلب الحبيب للزواج</h3>
+                    <p class="product-description">خبرة 25 سنة في العلوم الروحانية أضمن وأقوى الأعمال المجربة</p>
+                    <a href="https://wa.me/966545916508" class="product-btn">💒 اطلب الآن</a>
+                </div>
+            </div>
+            
+            <!-- المنتج 10 -->
+            <div class="product-card fade-in">
+                <img src="https://pfst.cf2.poecdn.net/base/image/62cfff3873e0a067501bf1394c9d3a920bfb02db0ab80007c9f8f9dc5d8c0123?w=869&amp;h=911" alt="أقوى شيخة روحانية في العالم" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">أقوى شيخة روحانية في العالم</h3>
+                    <p class="product-description">لسحر الحبيب أقوى شيخة روحانية في العالم لسحر الحبيب عمل روحاني مضمون وحقيقي</p>
+                    <a href="https://wa.me/966545916508" class="product-btn">🌟 اطلب الآن</a>
+                </div>
+            </div>
+            
+            <!-- المنتج 11 -->
+            <div class="product-card fade-in">
+                <img src="https://pfst.cf2.poecdn.net/base/image/8045ce53d724171dfda2e61dd1ce11a0e5e12ac718ad707e3ecba05ee58b6a79?w=869&amp;h=911" alt="شيخة روحانية مجربة ومضمونة" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">شيخة روحانية مجربة ومضمونة</h3>
+                    <p class="product-description">في سلطنه عمان شيخة روحانية مجربة ومضمونه في سلطنه عمان أقوى معالجة روحانية</p>
+                    <a href="https://wa.me/966545916508" class="product-btn">✨ اطلب الآن</a>
+                </div>
+            </div>
+            
+            <!-- المنتج 12 -->
+            <div class="product-card fade-in">
+                <img src="https://pfst.cf2.poecdn.net/base/image/bb3997ac655a4585dfc52d1e030130c0a63d8b6a600ae607edae7f7954ffd7b7?w=869&amp;h=911" alt="جلب الحبيب بسرعة البرق" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">جلب الحبيب بسرعة البرق</h3>
+                    <p class="product-description">خبرة 25 سنة في العلوم الروحانية أضمن وأقوى الأعمال المجربة</p>
+                    <a href="https://wa.me/966545916508" class="product-btn">⚡ اطلب الآن</a>
+                </div>
+            </div>
+            
+            <!-- المنتج 13 -->
+            <div class="product-card fade-in">
+                <img src="https://pfst.cf2.poecdn.net/base/image/62f16f5948ea87ddbc4129ec5a41ec9418f6bda2b70bb771302d790004b5ae48?w=869&amp;h=911" alt="رد الحبيب المفارق" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">رد الحبيب المفارق</h3>
+                    <p class="product-description">خبرة 25 سنة في العلوم الروحانية أضمن وأقوى الأعمال المجربة</p>
+                    <a href="https://wa.me/966545916508" class="product-btn">💔 اطلب الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الخدمات -->
+    <section class="services-section">
+        <h2 class="section-title fade-in">💫 خدماتنا الروحانية المتخصصة 💫</h2>
+        
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <span class="service-icon">💖</span>
+                <h3 class="service-title">جلب الحبيب والمحبة</h3>
+                <p class="service-description">عودة الحبيب خاضعاً محباً راغباً خلال 24-72 ساعة بأقوى الطلاسم الشرعية</p>
+                <a href="https://wa.me/966545916508" class="service-btn">اطلب الآن</a>
+            </div>
+            
+            <div class="service-card fade-in">
+                <span class="service-icon">🛡️</span>
+                <h3 class="service-title">فك السحر والحماية</h3>
+                <p class="service-description">إبطال جميع أنواع السحر والعقد الشيطانية وعلاج المس نهائياً</p>
+                <a href="https://wa.me/966545916508" class="service-btn">احمي نفسك</a>
+            </div>
+            
+            <div class="service-card fade-in">
+                <span class="service-icon">💍</span>
+                <h3 class="service-title">رد المطلقات</h3>
+                <p class="service-description">عودة المطلقة لبيت زوجها وأولادها خلال 3 أيام مع المحبة والوفاق</p>
+                <a href="https://wa.me/966545916508" class="service-btn">أعيدي زوجك</a>
+            </div>
+            
+            <div class="service-card fade-in">
+                <span class="service-icon">👰</span>
+                <h3 class="service-title">زواج العوانس</h3>
+                <p class="service-description">تعجيل الزواج للمتأخرات وجلب الخاطبين المناسبين</p>
+                <a href="https://wa.me/966545916508" class="service-btn">ابدئي رحلة الزواج</a>
+            </div>
+            
+            <div class="service-card fade-in">
+                <span class="service-icon">🔥</span>
+                <h3 class="service-title">تهييج المحبة</h3>
+                <p class="service-description">إشعال نار المحبة والعشق وتهييج المشاعر الباردة</p>
+                <a href="https://wa.me/966545916508" class="service-btn">أشعل الحب</a>
+            </div>
+            
+            <div class="service-card fade-in">
+                <span class="service-icon">💰</span>
+                <h3 class="service-title">تنزيل الأموال</h3>
+                <p class="service-description">فتح أبواب الرزق والثروة وجلب المال من مصادر حلال</p>
+                <a href="https://wa.me/966545916508" class="service-btn">افتح رزقك</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- أزرار التواصل المحسنة -->
+    <div class="contact-buttons">
+        <a href="https://wa.me/966545916508" class="contact-btn whatsapp-btn pulse" title="واتساب">
+            💬
+        </a>
+        <a href="tel:+966545916508" class="contact-btn phone-btn" title="اتصال">
+            📞
+        </a>
+    </div>
+
+    <!-- الفووتر -->
+    <footer class="footer">
+        <p class="footer-text">© 2024 الشيخة الروحانية أم جابر - جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script>
+        // انيميشن بسيطة عند التمرير
+        const observeElements = () => {
+            const elements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            elements.forEach(el => observer.observe(el));
+        };
+
+        // شريط التقدم
+        const updateProgressBar = () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            document.getElementById('progressBar').style.width = scrollPercent + '%';
+        };
+
+        // تأثيرات الأزرار
+        document.querySelectorAll('.contact-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                ripple.style.cssText = `
+                    position: absolute;
+                    border-radius: 50%;
+                    background: rgba(255,255,255,0.6);
+                    transform: scale(0);
+                    animation: ripple 0.6s linear;
+                    pointer-events: none;
+                `;
+                
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        // تشغيل الوظائف
+        window.addEventListener('load', observeElements);
+        window.addEventListener('scroll', updateProgressBar);
+
+        // إضافة تأثير الموجة
+        const rippleStyle = document.createElement('style');
+        rippleStyle.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(rippleStyle);
+    </script>
+
+
+</body></html>
